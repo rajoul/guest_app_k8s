@@ -1,0 +1,19 @@
+# in volume.yaml
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name:  postgres-pv
+  labels:
+    type: local
+
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/mnt/data"
+
